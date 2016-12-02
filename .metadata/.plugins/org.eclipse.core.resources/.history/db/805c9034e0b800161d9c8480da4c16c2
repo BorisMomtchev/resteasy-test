@@ -29,12 +29,12 @@ public class RestEasyTestClient {
 		Employee emp = new Employee();
 		
 		emp.setId(51);emp.setName("Boris");emp.setSalary(1000);
-		Response addResponse = add.request().post(Entity.entity(emp, MediaType.APPLICATION_JSON));
+		Response addResponse = add.request().post(Entity.entity(emp, MediaType.APPLICATION_XML));
 		System.out.println(addResponse.readEntity(GenericResponse.class));
 		System.out.println("HTTP Response Code:"+addResponse.getStatus());
 		addResponse.close();
 		
-		addResponse = add.request().post(Entity.entity(emp, MediaType.APPLICATION_JSON));
+		addResponse = add.request().post(Entity.entity(emp, MediaType.APPLICATION_XML));
 		System.out.println(addResponse.readEntity(GenericResponse.class));
 		System.out.println("HTTP Response Code:"+addResponse.getStatus());
 		addResponse.close();
